@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body id="cart">
+
+    <!-- header  -->
+    <header class="header">
+        <div class="container header-wrapper">
+            <!-- Start Left Column -->
+            <div class="header-col-left">
+                <a class="header-col-left__logo-link" href="index.html">
+                    <img class="header-col-left__logo-img" src="img/top-panel/logo.png" alt="Logo">
+                </a>
+                <a class="header-col-left__search-link" href="#">
+                    <img class="header-col-left___search-img" src="img/top-panel/search.svg" alt="search">
+                </a>
+            </div>
+            <!-- End Left Column -->
+
+            <!-- Start Right Column -->
+
+            <ul class="header-col-right">
+                <!-- Start Menu Button Element Group -->
+                <li class="header-col-right__menu-button-wrap">
+                    <label class="header-col-right__menu-button-label" for="menu">
+                        <img class="header-col-right__menu-button-img" src="./img/top-panel/menu-bar.svg"
+                            alt="Button Menu">
+                    </label>
+                </li>
+                <!-- End Menu Button Element Group -->
+                <li>
+                    <a class="header-col-right__login-link" href="registration.html">
+                        <img class="header-col-right__login-img" src="./img/top-panel/user-icon.svg"
+                            alt="Login Icon User">
+                    </a>
+                </li>
+                <li>
+                    <a class="header-col-right__cart-link" href="cart.html">
+                        <img class="header-col-right__cart-img" src="./img/top-panel/card.svg" alt="Go to cart">
+                        <span class="header-col-right__count-product">5</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- End Right Column -->
+        </div>
+        <input type="checkbox" id="menu">
+        <nav class="menu">
+            <label class="menu__close" for="menu">
+                <img src="./img/menu-close.png" alt="">
+            </label>
+            <p class="menu__title">MENU</p>
+            <ul class="menu__items">
+                <li class="menu__item"><a href="catalog.html">MAN</a>
+                    <ul class="menu__sub-items">
+                        <li><a href="catalog.html">Accessories</a></li>
+                        <li><a href="catalog.html">Bags</a></li>
+                        <li><a href="catalog.html">Denim</a></li>
+                        <li><a href="catalog.html">T-Shirts</a></li>
+                    </ul>
+                </li>
+                <li class="menu__item"><a href="catalog.html">WOMAN</a>
+                    <ul class="menu__sub-items">
+                        <li><a href="catalog.html">Accessories</a></li>
+                        <li><a href="catalog.html">Jackets & Coats</a></li>
+                        <li><a href="catalog.html">Polos</a></li>
+                        <li><a href="catalog.html">T-Shirts</a></li>
+                        <li><a href="catalog.html">Shirts</a></li>
+                    </ul>
+                </li>
+                <li class="menu__item">
+                    <a href="catalog.html">KIDS</a>
+                    <ul class="menu__sub-items">
+                        <li><a href="catalog.html">Accessories</a></li>
+                        <li><a href="catalog.html">Jackets & Coats</a></li>
+                        <li><a href="catalog.html">Polos</a></li>
+                        <li><a href="catalog.html">T-Shirts</a></li>
+                        <li><a href="catalog.html">Shirts</a></li>
+                        <li><a href="catalog.html">Bags</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main content Catalog Page -->
+    <section class="subheader">
+        <div class="subheader__wrap container">
+            <h1 class="subheader__title">SHOPPING CART</h1>
+        </div>
+    </section>
+    <!-- START Content Cart Page -->
+
+    <section class="order container">
+        <h2 class="hidden">Content Cart</h2>
+        <div class="order__products">
+            <div class="order__product-items">
+                <!-- Item Product -->
+                <div class="order__product-item">
+                    <div class="order__product-img"><img src="img/product/product-1.jpg" alt="Product"></div>
+                    <div class="order__product-info">
+                        <h3 class="order__product-name"><a href="product.html"> MANGO PEOPLE T-SHIRT</a></h3>
+                        <div class="order__product-description">
+                            <p>Price: <span class="pink">$300</span></p>
+                            <p>Color: Red</p>
+                            <p>Size: Xl</p>
+                            <p>Quantity: <span class="order__product-quant">2</span></p>
+                        </div>
+                    </div>
+                    <div class="order__delete-product">
+                        <a href="#" class="order__delete-product-link"><img src="img/menu-close.png" alt=""></a>
+                    </div>
+                </div>
+                <!-- Item Product -->
+
+                <!-- Item Product -->
+                <div class="order__product-item">
+                    <div class="order__product-img"><img src="img/product/product-2.jpg" alt="Product"></div>
+                    <div class="order__product-info">
+                        <h3 class="order__product-name"><a href="product.html">MANGO PEOPLE T-SHIRT</a></h3>
+                        <div class="order__product-description">
+                            <p>Price: <span class="pink">$300</span></p>
+                            <p>Color: Red</p>
+                            <p>Size: Xl</p>
+                            <p>Quantity: <span class="order__product-quant">2</span></p>
+                        </div>
+                    </div>
+                    <div class="order__delete-product">
+                        <a href="#" class="order__delete-product-link"><img src="img/menu-close.png" alt=""></a>
+                    </div>
+                </div>
+                <!-- Item Product -->
+
+            </div>
+            <div class="order__control-buttons">
+                <a href="" class="order__control_link">CLEAR SHOPPING CART</a>
+                <a href="" class="order__control_link">CONTINUE SHOPPING</a>
+            </div>
+        </div>
+        <div class="order__form">
+            <h3 class="order__form_title">SHIPPING ADRESS</h3>
+            <form action="/" class="order__form_elements">
+                <input name="sity" type="text" class="form-input" placeholder="Bangladesh">
+                <input name="stat" type="text" class="form-input" placeholder="State">
+                <input name="zipcode" type="text" class="form-input" placeholder="Postcode / Zip">
+                <button class="order__form_submit">
+                    GET A QUOTE
+                </button>
+            </form>
+            <div class="order__total">
+                <p class="order__sub-total">SUB TOTAL <span>$900</span></p>
+                <p class="order__total-price">GRAND TOTAL <span>$900</span></p>
+                <button class="order__control_link order__form-submit">
+                    PROCEED TO CHECKOUT
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- END Content Cart Page -->
+    <section class="feedback">
+        <h2 class="hidden">Feedback</h2>
+        <div class="container">
+            <div class="feedback-wrapper">
+                <div class="feedback__col-left">
+                    <img src="./img/footer/face.png" class="feedback__img-manager" alt="Manager Face">
+                    <div class="feedback__text">
+                        "Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum"
+                    </div>
+                </div>
+                <div class="feedback__col-right">
+                    <h2 class="feedback__title-subscribe">SUBSCRIBE
+                    </h2>
+                    <div class="feedback__description-subscribe">
+                        FOR OUR NEWLETTER AND PROMOTION
+                    </div>
+                    <form action="/" class="feedback__form-subscribe">
+                        <input class="feedback__subscribe-input-email" name="email" type="email"
+                            placeholder="Enter Your Email">
+                        <input class="feedback__subscribe-input-button" type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container footer-wrapper">
+            <div class="footer__copyright">
+                &copy; 2021 Brand All Rights Reserved.
+            </div>
+            <ul class="footer__social-links">
+                <li>
+                    <a href="#" class="footer__social-link">
+                        <img src="./img/footer/social-icon/1.svg" alt="" class="footer__img-social">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer__social-link">
+                        <img src="./img/footer/social-icon/2.svg" alt="" class="footer__img-social">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer__social-link">
+                        <img src="./img/footer/social-icon/3.svg" alt="" class="footer__img-social">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer__social-link">
+                        <img src="./img/footer/social-icon/4.svg" alt="" class="footer__img-social">
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </footer>
