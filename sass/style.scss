@@ -1,0 +1,904 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+
+body {
+    font-family: "Lato", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: #f16d7f !important;
+}
+li {
+    list-style: none;
+}
+.pink {
+    color: #ef5b70;
+}
+
+.hidden {
+    position: absolute;
+    left: -9999px;
+    margin: -1;
+    font-size: 1px;
+    //opacity: 0;
+}
+// Главная страница
+
+// Секция - ШАПКА САЙТА
+.header {
+    background-color: #222222;
+    padding: 18px 0;
+    input[type="checkbox"]:checked ~ .menu {
+        display: block !important;
+    }
+    i {
+        color: #ffffff;
+        font-size: 35px;
+        &:hover {
+            color: #f16d7f;
+        }
+    }
+}
+
+.menu {
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    background: #ffffff;
+    display: none;
+    position: absolute;
+    top: 77.5px;
+    right: 0px;
+    width: 232px;
+    height: 764px;
+    z-index: 100;
+    &__close {
+        display: block;
+        text-align: right;
+        padding: 16px;
+        padding-bottom: 0;
+        cursor: pointer;
+    }
+    &__title {
+        margin-top: 9px;
+        margin-left: 34px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+        margin-bottom: 4px;
+    }
+
+    &__items {
+        padding-left: 33px;
+    }
+    &__item {
+        padding-top: 20px;
+        font-size: 14px;
+        line-height: 17px;
+        a {
+            color: #f16d7f;
+        }
+    }
+
+    &__sub-items {
+        padding-left: 22px;
+
+        li {
+            font-size: 14px;
+            line-height: 17px;
+            padding-top: 11px;
+            a {
+                color: #6f6e6e;
+            }
+        }
+    }
+}
+// Обёртка для шапки сайта
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+// Левая колонка шапри сайта
+.header-col-left {
+    display: flex;
+    align-items: center;
+    // Логотип
+    &__logo-link {
+        padding-right: 41px;
+    }
+    &__search-link {
+        i {
+            font-size: 32px;
+        }
+    }
+}
+// Правая колонка шапки сайта
+.header-col-right {
+    display: flex;
+    align-items: center;
+    // Обёртка для кнопки открытия меню
+    &__menu-button-wrap {
+        display: inline-block;
+    }
+    &__menu-button-label {
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 35px;
+    }
+
+    // ссылка на страницу входа
+    &__login-link {
+        padding-left: 33px;
+        i {
+            font-size: 28px !important;
+        }
+    }
+    // ссылка на страницу корзина
+    &__cart-link {
+        padding-left: 33px;
+        position: relative;
+        svg {
+            fill: #e8e8e8;
+            stroke-width: 2;
+        }
+        &:hover {
+            svg {
+                fill: #f16d7f !important;
+            }
+        }
+    }
+    &__count-product {
+        position: absolute;
+        border-radius: 50%;
+        padding: 2px 5px;
+        top: -18px;
+        right: -10px;
+        background-color: #f16d7f;
+        z-index: 10;
+        color: white;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+// Промо акции и заголовок страницы
+.promo {
+    background: #f1e4e6;
+    .promo-wrapper {
+        height: 764px;
+        background-image: url(../img/slider/1.png);
+        background-repeat: no-repeat;
+        background-position-x: -225px;
+        background-position-y: bottom;
+        //background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    &__title {
+        font-weight: 900;
+        font-size: 48px;
+        line-height: 40px;
+        color: #222222;
+        border-left: 12px solid #f16d7f;
+        padding-left: 16px;
+        margin-right: 94px;
+    }
+
+    &__title-small {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    &__title-pink {
+        color: #f16d7f;
+    }
+}
+// Категории
+.categories-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.categories {
+    padding: 65px 0;
+
+    &__item {
+        background-color: #cccccc;
+        width: 360px;
+        height: 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    &__for-womаn {
+        background: url(../img/image-home-grid/1.jpg) no-repeat;
+    }
+
+    &__for-mаn {
+        background: url(../img/image-home-grid/2.jpg) no-repeat;
+    }
+
+    &__for-kids {
+        background: url(../img/image-home-grid/3.jpg) no-repeat;
+    }
+
+    &__for-accesories {
+        height: 180px;
+        width: 100%;
+        background: url(../img/image-home-grid/4.jpg) no-repeat;
+    }
+
+    &__sale {
+        font-size: 16px;
+        line-height: 19px;
+        color: #ffffff;
+    }
+    &__name {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        a {
+            color: #f16d7f;
+        }
+    }
+}
+
+.products {
+    padding: 31px 0 95px 0;
+
+    &__item {
+        width: 360px;
+        background: #f8f8f8;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 360px);
+        grid-template-rows: auto;
+        gap: 30px;
+        padding-bottom: 48px;
+    }
+
+    &__wrap-description {
+        padding: 0 24px 20px 18px;
+    }
+
+    &__section-title {
+        font-size: 30px;
+        line-height: 36px;
+        color: #222222;
+        text-align: center;
+    }
+
+    &__section-description {
+        font-size: 14px;
+        line-height: 17px;
+        color: #9f9f9f;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    &__titel {
+        padding-top: 24px;
+        padding-bottom: 12px;
+        a {
+            color: black;
+        }
+    }
+
+    &__description {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: #5d5d5d;
+        padding-bottom: 18px;
+    }
+
+    &__price {
+        font-size: 16px;
+        line-height: 19px;
+        color: #f16d7f;
+    }
+
+    &__wrap-button {
+        display: flex;
+        justify-content: center;
+    }
+    &__button {
+        border: 1px solid #ff6a6a;
+        padding: 14px 38px;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 19px;
+        cursor: pointer;
+        color: #f26376;
+    }
+    &__button:hover {
+        background-color: #f26376;
+        color: #ffffff !important;
+    }
+}
+
+.features {
+    background: #222224;
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: space-between;
+        padding: 104px 0 104px 0;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+        width: 360px;
+    }
+
+    &__img {
+        padding-bottom: 28px;
+    }
+    &__item-title {
+        padding-bottom: 16px;
+        font-size: 19.96px;
+        line-height: 24px;
+        color: #fbfbfb;
+    }
+
+    &__item-description {
+        font-weight: 300;
+        font-size: 13.972px;
+        line-height: 17px;
+        text-align: center;
+        color: #fbfbfb;
+    }
+}
+
+.feedback {
+    //background-color: rgba(244, 244, 244, 0.7);
+    background-image: linear-gradient(90deg, rgba(244, 244, 244, 0.7) 100%, rgba(244, 244, 244, 0.7) 100%),
+        url(../img/footer/background-section1.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    background-size: cover;
+
+    .feedback-wrapper {
+        padding-top: 96px;
+        padding-bottom: 156px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__col-left {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 359px;
+    }
+
+    &__text {
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        font-style: italic;
+        color: #222224;
+        padding-top: 20px;
+    }
+
+    &__col-right {
+        width: 557px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 24px;
+        line-height: 167.2%;
+        text-align: center;
+        color: #222224;
+    }
+    &__title-subscribe {
+        padding-top: 54px;
+    }
+    &__description-subscribe {
+        padding-bottom: 32px;
+    }
+
+    &__form-subscribe {
+        display: flex;
+
+        input {
+            border: 0;
+            height: 49px;
+            //padding: 7px 22px;
+        }
+        input::placeholder {
+            //padding: 7px 22px;
+        }
+    }
+    &__subscribe-input-email {
+        background: #e1e1e1;
+        width: 259px;
+        border-radius: 30px 0px 0 30px;
+        width: 100% !important;
+    }
+    &__subscribe-input-email {
+        background: #e1e1e1;
+        width: 259px;
+        border-radius: 30px 0px 0 30px;
+        padding: 7px 22px;
+    }
+    &__subscribe-input-button {
+        width: 100px;
+        background: #f16d7f;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ffffff;
+        cursor: pointer;
+        border-radius: 0px 30px 30px 0px;
+    }
+}
+
+.footer {
+    background: #222224;
+    .footer-wrapper {
+        padding: 24px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__copyright {
+        font-size: 16px;
+        line-height: 19px;
+        color: #fbfbfb;
+    }
+    &__social-links {
+        display: flex;
+    }
+    &__social-link {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background: #ffffff;
+        color: black;
+        margin-left: 7px;
+        text-align: center;
+        padding-top: 6px;
+    }
+    &__social-link:hover {
+        background: #f16d7f;
+        i {
+            color: white;
+        }
+    }
+}
+
+// Каталог товаров
+.subheader {
+    background: #f8f3f4;
+    height: 148px;
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 29px;
+        color: #f16d7f;
+    }
+    &__breadcrumbs {
+        display: flex;
+        list-style: none;
+        li {
+            a {
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 17px;
+                color: #636363;
+            }
+        }
+        li::after {
+            content: " / ";
+            padding: 0px 5px;
+            color: #636363;
+        }
+        li:last-child {
+            color: #f16d7f;
+            font-weight: bold;
+        }
+        li:last-child::after {
+            content: "";
+        }
+    }
+}
+
+.sort {
+    padding-top: 51px;
+    padding-bottom: 64px;
+    display: flex;
+
+    &__menu-link {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+
+        img {
+            padding-left: 11px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        gap: 27px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        a {
+            font-size: 14px;
+            line-height: 17px;
+            color: #6f6e6e;
+        }
+    }
+    &__item::after {
+        content: url("../img/sort_sort.png");
+        padding-left: 10px;
+        color: #6f6e6e;
+    }
+}
+#catalog {
+    .card {
+        &__items {
+            padding-bottom: 48px !important;
+        }
+        padding-bottom: 14px !important;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ebebeb;
+    width: fit-content;
+    margin: 0 auto;
+    box-sizing: border-box;
+    li {
+        padding: 15px;
+        a {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+        }
+        a.active {
+            color: #ef5b70;
+        }
+    }
+}
+#menu {
+    display: none;
+}
+
+// Страница продукта
+
+.slider {
+    z-index: -1;
+    position: relative;
+    height: 777px;
+    &__slides {
+        height: 100%;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__control-buttons {
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        height: 777px;
+        width: 100%;
+        align-items: center;
+    }
+    &__previous,
+    &__next {
+        display: block;
+        width: 47px;
+        height: 47px;
+
+        background: rgba(42, 42, 42, 0.15);
+        img {
+            padding: 12px 17px;
+            filter: brightness(0%);
+        }
+
+        :hover {
+            filter: none;
+        }
+    }
+
+    &__previous {
+        img {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.product-info {
+    border: 1px solid #eaeaea;
+    padding: 65px 0;
+    background-color: #ffffff;
+    z-index: 1;
+    margin-top: -65px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__category {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: #f16d7f;
+        padding-bottom: 12px;
+        position: relative;
+    }
+
+    &__category::before {
+        position: absolute;
+        content: "";
+        background-color: #f16d7f;
+        color: #f16d7f;
+        width: 63px;
+        height: 3px;
+        bottom: 0;
+        left: 43px;
+    }
+
+    &__name {
+        padding: 12px 0;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color: #4d4d4d;
+    }
+    &__description {
+        padding: 36px 0;
+        width: 554px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #5e5e5e;
+    }
+    &__price {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        color: #ef5b70;
+        padding-bottom: 64px;
+        width: 642px;
+        text-align: center;
+        border-bottom: 1px solid #eaeaea;
+    }
+}
+
+#product {
+    .sort__items {
+        padding-top: 64px;
+        padding-bottom: 48px;
+    }
+    .products__wrap-button {
+        a {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: 19px;
+            color: #f26376;
+        }
+        img {
+            padding-right: 23px;
+            height: 23px;
+        }
+        :hover {
+            img {
+                filter: brightness(0%) invert(1);
+            }
+        }
+    }
+
+    .products {
+        padding: 128px 0;
+    }
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    //flex-direction: column;
+    padding-top: 96px;
+    gap: px;
+
+    &__products {
+        width: 652px;
+    }
+    &__form {
+        width: 360px;
+    }
+
+    &__product-items {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    &__product-item {
+        display: flex;
+        // filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+        box-shadow: 17px 19px 24px 0px rgba(0, 0, 0, 0.13);
+    }
+    &__product-img {
+        max-height: 306px;
+        max-width: 262px;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__product-info {
+        padding: 22px 22px 0px 31px;
+        width: 262px;
+    }
+
+    &__delete-product {
+        text-align: right;
+        flex: auto;
+        padding: 22px 28px;
+    }
+    &__product-name {
+        a {
+            font-size: 24px;
+            line-height: 29px;
+            color: #222222;
+        }
+    }
+    &__product-description {
+        padding-top: 42px;
+        p {
+            font-size: 22px;
+            line-height: 26px;
+            color: #575757;
+            padding-top: 6px;
+        }
+    }
+    &__product-quant {
+        margin-left: 40px;
+        border: 1px solid #eaeaea;
+        padding: 1px 16px;
+        font-size: 18px;
+        line-height: 22px;
+        color: #656565;
+    }
+
+    &__control-buttons {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 72px;
+        padding-bottom: 128px;
+    }
+    &__control_link {
+        padding: 17px 40px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        border: 1px solid #a4a4a4;
+        color: #000000;
+    }
+
+    &__form {
+    }
+    &__form_title {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+    }
+    &__form_elements {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-input {
+        padding-left: 16px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        width: 100%;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #b1b1b1;
+        border: 1px solid #a4a4a4;
+        margin-top: 20px;
+        box-sizing: border-box;
+        &:hover,
+        &:focus,
+        &:active {
+            border: 1px solid #a4a4a4;
+            outline: 0.01;
+        }
+    }
+
+    &__form_submit {
+        margin-top: 20px;
+        padding-left: 14px;
+        padding-right: 14px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        width: 104px;
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 13px;
+        color: #4a4a4a;
+        border: 1px solid #a4a4a4;
+        background: #ffffff;
+        cursor: pointer;
+        &:hover {
+            color: white;
+            background-color: #f16d7f;
+        }
+    }
+
+    &__total {
+        background: #f5f3f3;
+        padding: 37px 34px 42px 44px;
+        margin-top: 57px;
+    }
+    &__sub-total {
+        text-align: right;
+        font-size: 11px;
+        line-height: 13px;
+        color: #4a4a4a;
+        padding-bottom: 12px;
+        span {
+            padding-left: 26px;
+        }
+    }
+    &__total-price {
+        text-align: right;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+        padding-bottom: 21px;
+        border-bottom: 1px solid #e2e2e2;
+        margin-bottom: 17px;
+        padding-right: 3px;
+
+        span {
+            font-weight: bold;
+            padding-left: 25px;
+            color: #f16d7f;
+        }
+    }
+    &__form-submit {
+        background-color: #f16d7f;
+        color: white;
+        cursor: pointer;
+        width: 100%;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+@import "./index";
