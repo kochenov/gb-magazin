@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Страница товара
+        link(rel="stylesheet" href="css/style.min.css")
+        script(src="https://kit.fontawesome.com/a64eaccf54.js" crossorigin="anonymous")
+    body#product
+        include pug/includes/_header.pug
+        //- start main 
+        include pug/includes/_subheader.pug
+        include pug/includes/slider.pug
+        include pug/includes/product-info.pug
+        include pug/mixins/card.pug
+        section.products.container 
+            .products__items 
+                each val in [1, 2, 3]
+                    +card(val)
+
+
+        //- end main
+        include pug/includes/_feedback.pug
+        include pug/includes/_footer.pug 
