@@ -1,0 +1,76 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Корзина
+        link(rel="stylesheet" href="css/style.min.css")
+        script(src="https://kit.fontawesome.com/a64eaccf54.js" crossorigin="anonymous")
+    body#cart
+        include pug/includes/_header.pug 
+        include pug/includes/_subheader.pug
+        section.order.container
+            h2.hidden Content Cart
+            .order__products 
+                .order__product-items
+                    //- Item 
+                    .order__product-item
+                        .order__product-img
+                            img(src="img/product/product-1.jpg" alt="Product")
+                        .order__product-info
+                            h3.order__product-name
+                                a(href="#") MANGO PEOPLE T-SHIRT
+                            .order__product-description
+                                p 
+                                    | Price:
+                                    span.pink $300
+                                p Color: Red
+                                p Size: Xl
+                                p 
+                                    | Quantity:
+                                    input.order__product-quant(type="number" value="2")
+                            a.order__delete-product-link(href="#") 
+                                img(src="img/menu-close.png" alt="") 
+                    //- Item
+
+                    //- Item
+                    .order__product-item
+                        .order__product-img
+                            img(src="img/product/product-1.jpg" alt="Product")
+                        .order__product-info
+                            h3.order__product-name
+                                a(href="#") MANGO PEOPLE T-SHIRT
+                            .order__product-description
+                                p 
+                                    | Price:
+                                    span.pink $300
+                                p Color: Red
+                                p Size: Xl
+                                p 
+                                    | Quantity:
+                                    input.order__product-quant(type="number" value="2")
+                            a.order__delete-product-link(href="#") 
+                                img(src="img/menu-close.png" alt="") 
+                    //- Item
+                .order__control-buttons
+                    a.order__control_link(href="#") Clear shopping cart
+                    a.order__control_link(href="#") Continue shopping
+            .order__form
+                .order__form-wrap
+                    form.order__form_elements
+                        h3.order__form_title SHIPPING ADRESS
+                        input.form-input(name="sity" type="text" required placeholder="Bangladesh")
+                        input.form-input(name="stat" type="text" required placeholder="State")
+                        input.form-input(name="zipcode" type="text" required placeholder="Postcode")
+                        button.order__form_submit(type="submit") GET A QUOTE
+                    .order__total
+                        p.order__sub-total 
+                            | SUB TOTAL
+                            span $900
+                        p.order__total-price
+                            | GRAND TOTAL
+                            span $900
+                        button(class="order__control_link order__form-submit") PROCEED TO CHECKOUT
+        include pug/includes/_feedback.pug 
+        include pug/includes/_footer.pug

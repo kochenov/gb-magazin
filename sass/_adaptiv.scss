@@ -1,0 +1,54 @@
+// Сброс отступов
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 1140px;
+}
+
+/* tablet */
+@media (max-width: 1180px) {
+    .container {
+        max-width: calc(768px - 16px * 2);
+    }
+
+    @include promo-tablet;
+    @include categories-tablet;
+    @include features-tablet;
+    @include feedback-tablet;
+    @include products-tablet;
+    @include subheader-tablet;
+    @include slider-tablet;
+    @include product-info-tablet;
+    @include order-tablet;
+    @include registration-tablet;
+}
+
+/*mobile*/
+@media (max-width: 767px) {
+    .container {
+        max-width: calc(375px - 8px * 2);
+    }
+    .sm-hidden {
+        display: none;
+    }
+    @include promo-mobile;
+    @include categories-mobile;
+    @include features-mobile;
+    @include feedback-mobile;
+    @include products-mobile;
+    @include footer-mobile;
+    @include slider-mobile;
+    @include product-info-mobile;
+    @include order-mobile;
+    @include registration-mobile;
+}

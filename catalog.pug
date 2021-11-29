@@ -1,0 +1,57 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Каталог товаров
+        link(rel="stylesheet" href="css/style.min.css")
+        script(src="https://kit.fontawesome.com/a64eaccf54.js" crossorigin="anonymous")
+    body#catalog
+        include pug/includes/_header.pug
+        //- start main 
+        include pug/includes/_subheader.pug
+        section.sort.container
+            h2.hidden Инструменты фильтрации и сортировки товаров
+            .sort__filter
+                a.sort__menu-link(href="#") FILTER
+                    img(src="./img/sort.svg" alt="")
+            ul.sort__items
+                li.sort__item
+                    a(href="#") TRENDING NOW
+                li.sort__item
+                    a(href="#") SIZE
+                li.sort__item
+                    a(href="#") PRICE  
+        include pug/mixins/card.pug
+        main.products.container 
+            ul.products__items 
+                each val in [1,2,3,4,5,6,7,8,9]
+                    +card(val)
+            .products__wrap-button
+                ul.pagination
+                    li  
+                        a(href="catalog.html") 
+                            img(src="./img/catalog/paginate-left.png" alt="back")
+                    li  
+                        a.active(href="catalog.html") 1
+                    li  
+                        a(href="catalog.html") 2
+                    li  
+                        a(href="catalog.html") 3
+                    li  
+                        a(href="catalog.html") 4
+                    li  
+                        a(href="catalog.html") 5
+                    li  
+                        a(href="catalog.html") 6
+                    li.disable  
+                        a(href="catalog.html") .....
+                    li  
+                        a(href="catalog.html") 20 
+                    li  
+                        a(href="catalog.html") 
+                            img(src="./img/catalog/paginate-right.png" alt="next")
+        //- end main
+        include pug/includes/_feedback.pug
+        include pug/includes/_footer.pug 
