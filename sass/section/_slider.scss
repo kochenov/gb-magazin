@@ -1,0 +1,60 @@
+.slider {
+    z-index: -1;
+    position: relative;
+    height: 777px;
+    &__slides {
+        height: 100%;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__control-buttons {
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        height: 777px;
+        width: 100%;
+        align-items: center;
+    }
+    &__previous,
+    &__next {
+        display: block;
+        width: 47px;
+        height: 47px;
+        cursor: pointer !important;
+        background: rgba(42, 42, 42, 0.15);
+        img {
+            padding: 12px 17px;
+            filter: brightness(0%);
+        }
+
+        &:hover {
+            filter: none;
+            svg {
+                fill: #f16d7f;
+            }
+
+            background-color: #f16d7f;
+        }
+    }
+
+    &__previous {
+        img {
+            transform: rotate(180deg);
+        }
+    }
+}
+@mixin slider-tablet {
+    .slider {
+        height: 624px;
+
+        &__control-buttons {
+            height: 624px !important;
+        }
+    }
+}
+@mixin slider-mobile {
+}

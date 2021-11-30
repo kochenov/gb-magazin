@@ -1,0 +1,63 @@
+.features {
+    background: #222224;
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: space-between;
+        padding: 104px 0 104px 0;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+        width: 360px;
+        &:hover {
+            img {
+                animation: rotate-center 0.6s ease-in-out alternate forwards;
+            }
+        }
+    }
+
+    &__img {
+        padding-bottom: 28px;
+    }
+    &__item-title {
+        padding-bottom: 16px;
+        font-size: 19.96px;
+        line-height: 24px;
+        color: #fbfbfb;
+    }
+
+    &__item-description {
+        font-weight: 300;
+        font-size: 13.972px;
+        line-height: 17px;
+        text-align: center;
+        color: #fbfbfb;
+    }
+}
+
+@mixin features-tablet {
+    .features__items {
+        flex-direction: column;
+        padding-bottom: 35px;
+    }
+    .features__item {
+        padding-bottom: 46px;
+    }
+}
+
+@mixin features-mobile {
+}
+
+@keyframes rotate-center {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
