@@ -50,7 +50,8 @@
         line-height: 29px;
         color: #ef5b70;
         padding-bottom: 64px;
-        width: 642px;
+        //width: 642px;
+        padding-top: 32px;
         text-align: center;
         border-bottom: 1px solid #eaeaea;
     }
@@ -100,7 +101,9 @@
         }
     }
     .product-info__price {
-        width: 175px;
+        //width: 175px;
+        padding-top: 32px !important;
+        padding-bottom: 64px !important;
     }
     .sort__item a {
         font-size: 10px;
