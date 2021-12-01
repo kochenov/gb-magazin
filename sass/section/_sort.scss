@@ -1,3 +1,10 @@
+#catalog {
+    .sort {
+        &__items {
+            margin-left: 30px;
+        }
+    }
+}
 .sort {
     padding-top: 51px;
     padding-bottom: 64px;
@@ -17,7 +24,7 @@
     &__items {
         display: flex;
         gap: 37px;
-        margin-left: 30px;
+        // margin-left: 30px;
         padding-top: 20px;
     }
     &__item-details::-webkit-details-marker {
@@ -37,6 +44,9 @@
         .sort__item-details {
             font-size: 15px;
             line-height: 17px;
+            color: #6f6e6e;
+        }
+        a {
             color: #6f6e6e;
         }
     }
