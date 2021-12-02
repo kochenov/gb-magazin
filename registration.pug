@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
     head
         include pug/_header.pug
-        title Страница товара
+        title Регистрация нового пользователя
 body#registration
     include pug/includes/_header.pug
     //- start main 
@@ -13,16 +13,16 @@ body#registration
         .registration__form
             form#registrarion
                 p.registration__name-group Your Name
-                input(class="form-input" placeholder="First Name" type="text")
-                input(class="form-input" placeholder="Last Name" type="text")
+                input(class="form-input" required placeholder="First Name" type="text")
+                input(class="form-input" required placeholder="Last Name" type="text")
                 .group-check-box
-                    input(id="male" type="radio" name="sex")
+                    input(id="male" type="radio" checked name="sex")
                     label.male(for="male") Male
                     input(id="female" type="radio" name="sex")
                     label.female(for="female") Female
                 p.registration__name-group Login details
-                input(class="form-input" placeholder="Email" type="email")
-                input(class="form-input" placeholder="Password" type="password")
+                input(class="form-input" required placeholder="Email" type="email")
+                input(class="form-input" required min="7" placeholder="Password" type="password")
                 p.registration__name-text Please use 8 or more characters, with at least 1 number and a mixture of uppercase and lowercase letters
                 button(class="order__control_link order__form-submit registration__form-btn ") JOIN NOW
                     svg(width="17" height="10" viewBox="0 0 17 10" xmlns="http://www.w3.org/2000/svg")
