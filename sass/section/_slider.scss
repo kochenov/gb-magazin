@@ -1,6 +1,6 @@
 .slider {
     z-index: -1;
-    position: relative;
+    //position: relative;
     height: 777px;
     &__slides {
         height: 100%;
@@ -10,31 +10,39 @@
             object-fit: cover;
         }
     }
-    &__control-buttons {
-        position: absolute;
-        top: 0;
-        display: flex;
-        justify-content: space-between;
-        height: 777px;
-        width: 100%;
-        align-items: center;
+    &__sliders {
+        position: relative;
     }
+    // &__control-buttons {
+    //     position: absolute;
+    //     top: 0;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     height: 777px;
+    //     width: 100%;
+    //     align-items: center;
+    // }
     &__previous,
     &__next {
-        display: block;
+        position: absolute;
+        top: 588px;
+        right: 0;
+        display: inline-block;
         width: 47px;
         height: 47px;
         cursor: pointer !important;
         background: rgba(42, 42, 42, 0.15);
-        img {
+        border: none;
+        svg {
+            width: 100%;
+            height: 100%;
             padding: 12px 17px;
-            filter: brightness(0%);
+            fill: #000000;
         }
 
         &:hover {
-            filter: none;
             svg {
-                fill: #f16d7f;
+                fill: #ffffff;
             }
 
             background-color: #f16d7f;
@@ -45,6 +53,7 @@
         img {
             transform: rotate(180deg);
         }
+        left: 0;
     }
 }
 @mixin slider-tablet {
