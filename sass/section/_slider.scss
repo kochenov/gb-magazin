@@ -60,8 +60,9 @@
     .slider {
         height: 624px;
 
-        &__control-buttons {
-            height: 624px !important;
+        &__previous,
+        &__next {
+            top: 435px;
         }
     }
 }
