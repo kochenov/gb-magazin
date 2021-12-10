@@ -30,6 +30,10 @@ input[type="submit"] {
     //opacity: 0;
 }
 
+summary::-webkit-details-marker {
+    display: none;
+}
+
 .form-input {
     padding-left: 16px;
     padding-top: 13px;
