@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        include pug/_header.pug
+        title Страница товара     
+    body#product
+        include pug/includes/_header.pug
+        //- start main 
+        include pug/includes/_subheader.pug
+        include pug/includes/slider.pug
+        include pug/includes/product-info.pug
+        include pug/mixins/card.pug
+        section.products.container 
+            ul.products__items 
+                each val in [1, 2, 3]
+                    +card(val)
+        //- end main
+        include pug/_footer.pug
