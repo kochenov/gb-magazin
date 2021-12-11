@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 
 body {
     font-family: "Lato", sans-serif;
@@ -12,7 +12,47 @@ a:hover {
 li {
     list-style: none;
 }
+.pink {
+    color: #ef5b70;
+}
+a,
+svg,
+button,
+input[type="button"],
+input[type="submit"] {
+    transition: 0.3s;
+}
+.hidden {
+    position: absolute;
+    left: -9999px;
+    margin: 0;
+    font-size: 1px;
+    //opacity: 0;
+}
 
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.form-input {
+    padding-left: 16px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    width: 100%;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: #b1b1b1;
+    border: 1px solid #a4a4a4;
+    margin-top: 20px;
+    box-sizing: border-box;
+    &:hover,
+    &:focus,
+    &:active {
+        border: 1px solid #a4a4a4;
+        outline: 0;
+    }
+}
 // Главная страница
 
 // Секция - ШАПКА САЙТА
@@ -20,24 +60,40 @@ li {
     background-color: #222222;
     padding: 18px 0;
     input[type="checkbox"]:checked ~ .menu {
-        display: block !important;
+        //display: block !important;
+
+        transform: translateY(0) !important;
+    }
+    i {
+        color: #ffffff;
+        font-size: 35px;
+        &:hover {
+            color: #f16d7f;
+        }
     }
 }
+
 .menu {
+    overflow: hidden;
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
     background: #ffffff;
-    display: none;
+    transform: translateY(-120%);
     position: absolute;
+    transition: transform 0.3s;
     top: 77.5px;
     right: 0px;
     width: 232px;
-    height: 764px;
-    z-index: 100;
+    min-height: 764px;
+    z-index: 9999;
     &__close {
         display: block;
         text-align: right;
         padding: 16px;
         padding-bottom: 0;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        position: absolute;
     }
     &__title {
         margin-top: 9px;
@@ -47,6 +103,7 @@ li {
         line-height: 17px;
         color: #000000;
         margin-bottom: 4px;
+        padding-top: 38px;
     }
 
     &__items {
@@ -78,6 +135,12 @@ li {
 .header-wrapper {
     display: flex;
     justify-content: space-between;
+    svg {
+        fill: #ffffff;
+        &:hover {
+            fill: #f16d7f;
+        }
+    }
 }
 // Левая колонка шапри сайта
 .header-col-left {
@@ -87,12 +150,10 @@ li {
     &__logo-link {
         padding-right: 41px;
     }
-    &__logo-img {
-    }
-    // Поиск
     &__search-link {
-    }
-    &__search-img {
+        i {
+            font-size: 32px;
+        }
     }
 }
 // Правая колонка шапки сайта
@@ -104,30 +165,37 @@ li {
         display: inline-block;
     }
     &__menu-button-label {
+        color: #ffffff;
         cursor: pointer;
-    }
-    // иконка меню
-    &__menu-button-img {
+        font-size: 35px;
     }
 
     // ссылка на страницу входа
     &__login-link {
         padding-left: 33px;
-    }
-    &__login-img {
+        i {
+            font-size: 28px !important;
+        }
     }
     // ссылка на страницу корзина
     &__cart-link {
         padding-left: 33px;
         position: relative;
-    }
-    &__cart-img {
+        svg {
+            fill: #e8e8e8;
+            stroke-width: 2;
+        }
+        &:hover {
+            svg {
+                fill: #f16d7f !important;
+            }
+        }
     }
     &__count-product {
         position: absolute;
         border-radius: 50%;
         padding: 2px 5px;
-        top: -5px;
+        top: -18px;
         right: -10px;
         background-color: #f16d7f;
         z-index: 10;
@@ -137,393 +205,18 @@ li {
     }
 }
 
-// Промо акции и заголовок страницы
-.promo {
-    background: #f1e4e6;
-    .promo-wrapper {
-        height: 764px;
-        background-image: url(../img/slider/1.png);
-        background-repeat: no-repeat;
-        background-position-x: -225px;
-        background-position-y: bottom;
-        //background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-    }
-    &__title {
-        font-weight: 900;
-        font-size: 48px;
-        line-height: 40px;
-        color: #222222;
-        border-left: 12px solid #f16d7f;
-        padding-left: 16px;
-        margin-right: 94px;
-    }
+@import "./section/home-promo";
+@import "./section/home-categories";
+@import "./section/products";
+@import "./section/features";
+@import "./section/feedback";
+@import "./section/footer";
+@import "./section/subheader";
+@import "./section/slider";
+@import "./section/product-page";
+@import "./section/order";
+@import "./section/sort";
 
-    &__title-small {
-        font-weight: bold;
-        font-size: 32px;
-        line-height: 38px;
-    }
-
-    &__title-pink {
-        color: #f16d7f;
-    }
-}
-// Категории
-.categories-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-.categories {
-    padding: 65px 0;
-
-    &__item {
-        background-color: #cccccc;
-        width: 360px;
-        height: 260px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-    }
-
-    &__for-womаn {
-        background: url(../img/image-home-grid/1.jpg) no-repeat;
-    }
-
-    &__for-mаn {
-        background: url(../img/image-home-grid/2.jpg) no-repeat;
-    }
-
-    &__for-kids {
-        background: url(../img/image-home-grid/3.jpg) no-repeat;
-    }
-
-    &__for-accesories {
-        height: 180px;
-        width: 100%;
-        background: url(../img/image-home-grid/4.jpg) no-repeat;
-    }
-
-    &__sale {
-        font-size: 16px;
-        line-height: 19px;
-        color: #ffffff;
-    }
-    &__name {
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 29px;
-        a {
-            color: #f16d7f;
-        }
-    }
-}
-
-.products {
-    padding: 31px 0 95px 0;
-
-    &__item {
-        width: 360px;
-        background: #f8f8f8;
-    }
-
-    &__items {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 360px);
-        grid-template-rows: auto;
-        gap: 30px;
-        padding-bottom: 48px;
-    }
-
-    &__wrap-description {
-        padding: 0 24px 20px 18px;
-    }
-
-    &__section-title {
-        font-size: 30px;
-        line-height: 36px;
-        color: #222222;
-        text-align: center;
-    }
-
-    &__section-description {
-        font-size: 14px;
-        line-height: 17px;
-        color: #9f9f9f;
-        text-align: center;
-        margin-bottom: 48px;
-    }
-
-    &__titel {
-        padding-top: 24px;
-        padding-bottom: 12px;
-        a {
-            color: black;
-        }
-    }
-
-    &__description {
-        font-weight: 300;
-        font-size: 14px;
-        line-height: 17px;
-        color: #5d5d5d;
-        padding-bottom: 18px;
-    }
-
-    &__price {
-        font-size: 16px;
-        line-height: 19px;
-        color: #f16d7f;
-    }
-
-    &__wrap-button {
-        display: flex;
-        justify-content: center;
-    }
-    &__button {
-        border: 1px solid #ff6a6a;
-        padding: 14px 38px;
-        text-decoration: none;
-        font-size: 16px;
-        line-height: 19px;
-        cursor: pointer;
-        color: #f26376;
-    }
-    &__button:hover {
-        background-color: #f26376;
-        color: #ffffff !important;
-    }
-}
-
-.features {
-    background: #222224;
-
-    &__items {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        justify-content: space-between;
-        padding: 104px 0 104px 0;
-    }
-    &__item {
-        display: flex;
-        flex-direction: column;
-        color: white;
-        align-items: center;
-        width: 360px;
-    }
-
-    &__img {
-        padding-bottom: 28px;
-    }
-    &__item-title {
-        padding-bottom: 16px;
-        font-size: 19.96px;
-        line-height: 24px;
-        color: #fbfbfb;
-    }
-
-    &__item-description {
-        font-weight: 300;
-        font-size: 13.972px;
-        line-height: 17px;
-        text-align: center;
-        color: #fbfbfb;
-    }
-}
-
-.feedback {
-    //background-color: rgba(244, 244, 244, 0.7);
-    background-image: linear-gradient(90deg, rgba(244, 244, 244, 0.7) 100%, rgba(244, 244, 244, 0.7) 100%),
-        url(../img/footer/background-section1.jpg);
-    background-repeat: no-repeat;
-    background-blend-mode: normal;
-    background-size: cover;
-
-    .feedback-wrapper {
-        padding-top: 96px;
-        padding-bottom: 156px;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__col-left {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-        width: 359px;
-    }
-
-    &__text {
-        font-size: 20px;
-        line-height: 24px;
-        text-align: center;
-        font-style: italic;
-        color: #222224;
-        padding-top: 20px;
-    }
-
-    &__col-right {
-        width: 557px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 24px;
-        line-height: 167.2%;
-        text-align: center;
-        color: #222224;
-    }
-    &__title-subscribe {
-        padding-top: 54px;
-    }
-    &__description-subscribe {
-        padding-bottom: 32px;
-    }
-
-    &__form-subscribe {
-        display: flex;
-
-        input {
-            border: 0;
-            height: 49px;
-        }
-        input::placeholder {
-            padding: 7px 22px;
-        }
-    }
-    &__subscribe-input-email {
-        background: #e1e1e1;
-        width: 259px;
-        border-radius: 30px 0px 0 30px;
-    }
-    &__subscribe-input-button {
-        width: 100px;
-        background: #f16d7f;
-        font-size: 14px;
-        line-height: 17px;
-        color: #ffffff;
-        cursor: pointer;
-        border-radius: 0px 30px 30px 0px;
-    }
-}
-
-.footer {
-    background: #222224;
-    .footer-wrapper {
-        padding: 24px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__copyright {
-        font-size: 16px;
-        line-height: 19px;
-        color: #fbfbfb;
-    }
-    &__social-links {
-        display: flex;
-    }
-    &__social-link {
-        display: block;
-        width: 32px;
-        height: 32px;
-        background: #ffffff;
-        img {
-            padding: 9px;
-        }
-        margin-left: 7px;
-    }
-    &__social-link:hover {
-        background: #f16d7f;
-        img {
-            filter: invert(1);
-        }
-    }
-}
-
-// Каталог товаров
-.subheader {
-    background: #f8f3f4;
-    height: 148px;
-    &__wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-    }
-    &__title {
-        font-size: 24px;
-        line-height: 29px;
-        color: #f16d7f;
-    }
-    &__breadcrumbs {
-        display: flex;
-        list-style: none;
-        li {
-            a {
-                text-decoration: none;
-                font-weight: 300;
-                font-size: 14px;
-                line-height: 17px;
-                color: #636363;
-            }
-        }
-        li::after {
-            content: " / ";
-            padding: 0px 5px;
-            color: #636363;
-        }
-        li:last-child {
-            color: #f16d7f;
-            font-weight: bold;
-        }
-        li:last-child::after {
-            content: "";
-        }
-    }
-}
-
-.sort {
-    padding-top: 51px;
-    padding-bottom: 64px;
-    display: flex;
-
-    &__menu-link {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 17px;
-        color: #000000;
-
-        img {
-            padding-left: 11px;
-        }
-    }
-
-    &__items {
-        display: flex;
-        gap: 27px;
-        margin: 0 auto;
-    }
-
-    &__item {
-        a {
-            font-size: 14px;
-            line-height: 17px;
-            color: #6f6e6e;
-        }
-    }
-    &__item::after {
-        content: url("../img/sort_sort.png");
-        padding-left: 10px;
-        color: #6f6e6e;
-    }
-}
 #catalog {
     .card {
         &__items {
@@ -547,14 +240,148 @@ li {
             font-weight: 300;
             font-size: 16px;
             line-height: 19px;
+            color: #c4c4c4;
         }
         a.active {
             color: #ef5b70;
         }
+        &:nth-child(7) {
+            padding-right: 0;
+        }
+        &:nth-child(9) {
+            padding-left: 0;
+        }
+    }
+    .disable {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 #menu {
     display: none;
+}
+
+.registration {
+    padding-top: 65px;
+    padding-bottom: 92px;
+    display: flex;
+    justify-content: space-between;
+    gap: 128px;
+
+    &__name-group {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+    }
+    .group-check-box {
+        display: flex;
+        align-items: center;
+        padding-top: 31px;
+        padding-bottom: 33px;
+        input[type="radio"] {
+            height: 17px;
+            width: 17px;
+            margin-right: 10px;
+        }
+        label {
+            margin-right: 20px;
+        }
+    }
+    &__name-text {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #b1b1b1;
+        padding: 15px 0 39px 0;
+    }
+    &__form-btn {
+        display: inline-block;
+        width: auto;
+        svg {
+            margin-left: 20px;
+            fill: #ffffff;
+        }
+        &:hover {
+            border: 1px solid #a4a4a4;
+        }
+    }
+}
+.registration__inform {
+    &-title {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+        padding-bottom: 32px;
+    }
+    &-description {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+        padding-bottom: 27px;
+    }
+    &-items {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+    }
+    &-item {
+        list-style-image: url("../img/marker-list.png");
+        padding-bottom: 16px;
+        margin-left: 26px;
+        padding-left: 22px;
+    }
+}
+
+@mixin registration-tablet {
+    .registration__inform-title {
+        font-size: 16px;
+        line-height: 19px;
+        padding-bottom: 30px;
+    }
+    .registration__inform-description {
+        font-size: 16px;
+        line-height: 19px;
+        padding-bottom: 30px;
+    }
+    .registration__inform-item {
+        padding-bottom: 16px;
+        margin-left: 26px;
+        padding-left: 22px;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .group-check-box {
+        font-size: 11px;
+    }
+    .order__form-submit {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .registration {
+        gap: 22px;
+    }
+    .registration__inform {
+        width: 49%;
+    }
+    .registration__form {
+        width: 49%;
+    }
+}
+@mixin registration-mobile {
+    .registration {
+        gap: 40px;
+        flex-direction: column;
+    }
+    .registration__inform {
+        width: 100%;
+    }
+    .registration__form {
+        width: 100%;
+    }
 }
 
 @import "./index";
