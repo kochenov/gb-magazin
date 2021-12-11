@@ -1,0 +1,149 @@
+doctype html
+html(lang="en")
+    head
+        include pug/_header.pug
+        title Каталог товаров
+    body#catalog
+        include pug/includes/_header.pug
+        //- start main 
+        include pug/includes/_subheader.pug
+        section.sort.container
+            h2.hidden Инструменты фильтрации и сортировки товаров
+            .sort__filter
+                details.sort__menu-details
+                    summary.sort__menu-summary 
+                        span.sm-hidden FILTER
+                        svg(width="15" height="10" viewBox="0 0 15 10" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z")
+                    .sort__filter-content 
+                        details.sort__menu-sub-details
+                            summary.sort__menu-sub-summary CATEGORY
+                            ul.sort__menu-sub-summary-items
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Accessories
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Bags
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Denim
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Hoodies & Sweatshirts
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Jackets & Coats
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Polos
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Shirts
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Shoes
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Sweaters & Knits
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   T-Shirts
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Tanks
+                        details.sort__menu-sub-details
+                            summary.sort__menu-sub-summary BRAND 
+                            ul.sort__menu-sub-summary-items
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Accessories
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Bags
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Denim
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Hoodies & Sweatshirts
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Jackets & Coats
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Polos
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Shirts
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Shoes
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Sweaters & Knits
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   T-Shirts
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Tanks
+                        details.sort__menu-sub-details
+                            summary.sort__menu-sub-summary DESIGNER 
+                            ul.sort__menu-sub-summary-items
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Accessories
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Bags
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Denim
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Hoodies & Sweatshirts
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Jackets & Coats
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Polos
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Shirts
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Shoes
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Sweaters & Knits
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   T-Shirts
+                                li.sort__menu-sub-summary-item
+                                    a(href="#")   Tanks
+            .sort__items
+                .sort__item
+                    a.sort__item-sort-summary(href="#") TRENDING NOW
+                .sort__item
+                    details.sort__item-sort-details 
+                        summary.sort__item-sort-summary SIZE
+                        ul.sort__item-sort-summary-items 
+                            li.sort__item-sort-summary-item 
+                                label
+                                    input(type="checkbox")
+                                    | XS
+                            li.sort__item-sort-summary-item 
+                                label
+                                    input(type="checkbox")
+                                    | S
+                            li.sort__item-sort-summary-item 
+                                label
+                                    input(type="checkbox")
+                                    | M
+                            li.sort__item-sort-summary-item 
+                                label
+                                    input(type="checkbox")
+                                    | L
+                .sort__item
+                    a.sort__item-sort-summary(href="#") PRICE  
+        include pug/mixins/card.pug
+        main.products.container 
+            ul.products__items 
+                each val in [1,2,3,4,5,6,7,8,9]
+                    +card(val)
+            .products__wrap-button
+                ul.pagination
+                    li  
+                        a(href="catalog.html") 
+                            img(src="./img/catalog/paginate-left.png" alt="back")
+                    li  
+                        a.active(href="catalog.html") 1
+                    li  
+                        a(href="catalog.html") 2
+                    li  
+                        a(href="catalog.html") 3
+                    li  
+                        a(href="catalog.html") 4
+                    li  
+                        a(href="catalog.html") 5
+                    li  
+                        a(href="catalog.html") 6
+                    li.disable  
+                        a(href="catalog.html") .....
+                    li  
+                        a(href="catalog.html") 20 
+                    li  
+                        a(href="catalog.html") 
+                            img(src="./img/catalog/paginate-right.png" alt="next")
+        //- end main
+        include pug/_footer.pug
