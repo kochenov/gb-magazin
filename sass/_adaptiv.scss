@@ -1,0 +1,116 @@
+// Сброс отступов
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// установка адаптивности, параметр размера экрана
+@mixin screen-size($size) {
+    // Для экранов смартфонов
+    @if $size==smartphone {
+        @media (min-width: 576px) {
+            @content;
+        }
+    }
+
+    // Для планшетов
+    @else if $size==tablet {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    // Для маленьких экранов ноутбуков
+    @else if $size==laptop {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+
+    // Для средних экранов ноутбуков (мой стандарт)
+    @else if $size==laptop-large {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    // для очень больших экранов
+    @else if $size==device-4k {
+        @media (min-width: 1400px) {
+            @content;
+        }
+    }
+}
+
+// Размеры экранов
+$size-phone-large: smartphone;
+$size-tablet: tablet;
+$size-laptop: laptop;
+$size-laptop-large: laptop-large;
+$size-device-4k: device-4k;
+
+.container {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@mixin smartphone {
+}
+
+@mixin tablet {
+}
+
+@mixin pc-laptop {
+}
+
+@mixin pc {
+}
+
+@mixin pc-large {
+}
+
+@include screen-size(smartphone) {
+    .container {
+        max-width: 540px;
+    }
+
+    @include smartphone();
+}
+
+@include screen-size($size-tablet) {
+    .container {
+        max-width: 720px;
+    }
+
+    @include tablet();
+}
+
+@include screen-size($size-laptop) {
+    .container {
+        max-width: 960px;
+    }
+
+    @include pc-laptop();
+}
+
+@include screen-size($size-laptop-large) {
+    .container {
+        max-width: 1140px;
+    }
+
+    @include pc-laptop();
+}
+
+@include screen-size($size-device-4k) {
+    .container {
+        max-width: 1140px;
+    }
+
+    @include pc-large();
+}
