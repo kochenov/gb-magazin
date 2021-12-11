@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/includes/page-title/page-title.scss"
+    ],
+    "names": [],
+    "file": "page-title.min.css"
+}

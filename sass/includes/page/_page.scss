@@ -1,0 +1,35 @@
+.page {
+    &__wrap {
+        display: grid;
+    }
+    &__item-wrap {
+        display: flex;
+        @include screen-size(xl) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    background: url(../../img/page/tehnologi-title.svg) top 20px left 400px /100% 500px no-repeat;
+    padding-bottom: 120px;
+    &__title {
+        text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.86);
+        padding: 200px 0;
+        width: 60%;
+    }
+    &__subtitle {
+        padding: 60px 0;
+    }
+    &__text {
+        padding: 8px 0;
+    }
+    &__img-right {
+        float: right;
+        padding: 20px;
+        height: 390px;
+    }
+    &__img-left {
+        float: left;
+        padding: 20px;
+        height: 390px;
+    }
+}
