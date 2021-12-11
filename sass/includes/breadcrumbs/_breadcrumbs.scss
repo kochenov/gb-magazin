@@ -1,0 +1,25 @@
+.breadcrumbs {
+    margin-top: 50px;
+    &__items {
+        list-style: none;
+        display: flex;
+    }
+    &__item {
+        position: relative;
+        padding-right: 30px;
+        font-size: 16px;
+        line-height: 18px;
+        &::after {
+            position: absolute;
+            content: url("../img/breadcrumbs/marker.svg");
+            top: 0;
+            right: 15px;
+        }
+        &:last-child:after {
+            content: "";
+        }
+    }
+    &__link {
+        color: $color-bark-blue;
+    }
+}

@@ -4,14 +4,64 @@
     padding: 0;
     box-sizing: border-box;
 }
+<<<<<<< HEAD
 
 .container {
+=======
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1400px;
+$xxl: 1600px;
+
+// установка адаптивности, параметр размера экрана
+@mixin screen-size($size) {
+    // Для экранов смартфонов
+    @if $size==sm {
+        @media (max-width: $sm) {
+            @content;
+        }
+    }
+
+    // Для планшетов
+    @else if $size==md {
+        @media (max-width: $md) {
+            @content;
+        }
+    }
+
+    // Для маленьких экранов ноутбуков
+    @else if $size==lg {
+        @media (max-width: $lg) {
+            @content;
+        }
+    }
+
+    // Для средних экранов ноутбуков (мой стандарт)
+    @else if $size==xl {
+        @media (max-width: $xl) {
+            @content;
+        }
+    }
+
+    // Устройства X-Large (большие настольные компьютеры, менее 1400 пикселей)
+    @else if $size==xxl {
+        @media (max-width: $xxl) {
+            @content;
+        }
+    }
+}
+
+.container {
+    max-width: calc(1600px - 42.5px * 2);
+>>>>>>> 1a53ad5d78028c6b834799dd02f1b139eac6d459
     padding-right: 0;
     padding-left: 0;
     margin-right: auto;
     margin-left: auto;
     margin-top: 0;
     margin-bottom: 0;
+<<<<<<< HEAD
     max-width: 1140px;
 }
 
@@ -53,4 +103,26 @@
     @include order-mobile;
     @include registration-mobile;
     @include sort-mobile;
+=======
+    //
+    @include screen-size(xxl) {
+        max-width: calc(1440px - 42.5px * 2);
+    }
+    //
+    @include screen-size(xl) {
+        max-width: calc(1024px - 32px * 2);
+    }
+    //
+    @include screen-size(lg) {
+        max-width: 960px;
+    }
+    //
+    @include screen-size(md) {
+        max-width: 900px;
+    }
+    //
+    @include screen-size(sm) {
+        max-width: 600px;
+    }
+>>>>>>> 1a53ad5d78028c6b834799dd02f1b139eac6d459
 }

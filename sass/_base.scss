@@ -1,0 +1,127 @@
+// Blue
+$color-bark-blue: #194484;
+$color-medium-blue: #0d6eb7;
+$color-medium-blue-2: #276ed8;
+$color-light-blue: #84b5ff;
+// Green
+$color-dark-green: #06b25f;
+$color-light-green: #66d6a0;
+//
+$color-dark-grey: #242424;
+$color-withe: #ffffff;
+// FONT
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@700&display=swap");
+$font-main: "Montserrat", sans-serif;
+$font-header: "Open Sans", sans-serif;
+
+body {
+    font-family: $font-main;
+    padding-top: 80px;
+}
+#homepage {
+    padding-top: 0;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-header;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h1 {
+    color: $color-bark-blue;
+    font-size: 44px;
+    line-height: 60px;
+    letter-spacing: 0.06em;
+}
+h2 {
+    color: $color-bark-blue;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 39px;
+    letter-spacing: 0.1em;
+}
+h3 {
+    color: $color-medium-blue;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.05em;
+}
+p {
+    font-family: $font-main;
+    color: $color-dark-grey;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+ul .list {
+    padding: 15px 0px 15px 35px;
+    li {
+        padding: 6px 0 6px 0;
+    }
+}
+
+.white {
+    color: #ffffff;
+}
+
+@mixin btn {
+    display: inline-block;
+    border-radius: 6px;
+    font-family: $font-header;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 0.8em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12.6px 25px;
+}
+// Button
+.btn {
+    @include btn();
+    color: $color-withe;
+    background-color: $color-dark-green;
+    border: 2px solid $color-dark-green;
+    &:hover {
+        background: linear-gradient(#0b9854, #0b9854);
+        border: 2px solid #0b9854;
+    }
+}
+.btn-lite {
+    @include btn();
+    background-color: $color-withe;
+    color: $color-dark-green;
+    border: 2px solid $color-dark-green;
+    box-sizing: border-box;
+
+    &:hover {
+        border: 2px solid #0b9854;
+        box-sizing: border-box;
+        background: linear-gradient(#0b9854, #0b9854);
+        color: $color-withe;
+    }
+}
+
+.btn-border {
+    @include btn();
+    color: $color-withe;
+    background-color: #ffffff00;
+    border: 2px solid $color-withe;
+    box-sizing: border-box;
+
+    &:hover {
+        border: 2px solid $color-dark-green;
+        box-sizing: border-box;
+        //background: linear-gradient(#0b9854, #0b9854);
+        color: $color-dark-green;
+    }
+}
