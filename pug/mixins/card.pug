@@ -1,5 +1,5 @@
-mixin card(img,title="ELLERY X M'O CAPSULE" ,price="$52.00")
-    li.products__item
+mixin card(img, price="52")
+    li.products__item(data-id=img)
         .products__img-wrap
             .products__overlay 
                 button.btn-add
@@ -9,7 +9,7 @@ mixin card(img,title="ELLERY X M'O CAPSULE" ,price="$52.00")
             img.products__img(src="./img/card/"+ img +".png" alt="ELLERY X M'O")
         .products__wrap-description
             h3.products__title
-                a.products__title-link(href="product.html")= title
+                a.products__title-link(href="product.html")= 'Product ' + img 
             p.products__description 
                 | Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym  Ellery teams up with Moda Operandi.
-            p.products__price=price
+            p.products__price= '$' + price*1.5

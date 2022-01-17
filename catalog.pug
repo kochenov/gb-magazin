@@ -119,8 +119,8 @@ html(lang="en")
         include pug/mixins/card.pug
         main.products.container 
             ul.products__items 
-                each val in [1,2,3,4,5,6,7,8,9]
-                    +card(val)
+                each val ,index in [1,2,3,4,5,6,7,8,9]
+                    +card(val, 15 + index)
             .products__wrap-button
                 ul.pagination
                     li  
